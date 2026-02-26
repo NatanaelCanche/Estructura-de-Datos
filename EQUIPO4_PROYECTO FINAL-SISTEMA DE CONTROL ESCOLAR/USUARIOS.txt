@@ -1,0 +1,47 @@
+Contra Proyec: Tecnm20271886
+
+
+Administración
+Nombre: Ricardo Jesus Sierra Aleman
+Matrícula: A2026
+Contraseña: Ricardo123
+
+Docente
+Nombre: Felipe Ramirez Canche Calderon
+Matrícula: D1886
+Contraseña: Chris2027
+
+Docente
+Nombre:Armando Lopez
+Matrícula: D1890
+Contraseña: Armando1890
+
+Docente
+Nombre: Manuel Enrique Ayora Ponce
+Matrícula: D1895
+Contraseña: Ayora1895
+
+Alumno
+Nombre: Carlos Jesus Lopez Sierra
+Matrícula: E2005
+Contraseña: Chrisandre05
+
+Alumno
+Nombre: Christian Andre Chacon Olvera
+Matrícula: E2006
+Contraseña: Chrisandre06
+
+Alumno
+Nombre: Adrian Mauricio Acuña Tejeda
+Matrícula: E2525
+Contraseña: Acuña2525
+
+Alumno
+Nombre: Axel Alfonso Hernandez Velazquez
+Matrícula: E3535
+Contraseña: Axel3535
+
+Alumno
+Nombre: Lucia Olvera Ponce
+Matrícula: E0606
+Contraseña: Lucia0606

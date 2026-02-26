@@ -1,0 +1,82 @@
+[
+  {
+    "id": "admin",
+    "nombre": "Administrador",
+    "password_hash": "3eb3fe66b31e3b4d10fa70b5cad49c7112294af6ae4e476a1c405155d45aa121",
+    "rol": "Administración",
+    "email": "admin@escuela.mx",
+    "activo": true
+  },
+  {
+    "id": "A2026",
+    "nombre": "Ricardo Jesus Sierra Aleman",
+    "password_hash": "d151c673cef73b88472f6676d465979dff941ca8bec2626d748456f94d75ec63",
+    "rol": "Administración",
+    "email": "Ricar@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "E2006",
+    "nombre": "Christian Andre Chacon Olvera",
+    "password_hash": "d36d37e7d2c9d9bd02fdb2eab103b9f48310377d88cf7f0049b76f94b602889d",
+    "rol": "Estudiante",
+    "email": "Chrisandre@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "E2005",
+    "nombre": "Carlos Jesus Lopez Sierra",
+    "password_hash": "cc41c44eb99a0e6c7e016a03875a2e25a136400822332e37d818bdd0f0e24a5b",
+    "rol": "Estudiante",
+    "email": "Carjesus@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "D1886",
+    "nombre": "Felipe Ramirez Canche Calderon",
+    "password_hash": "53d56c23359ce87e7a086999ae64834b4fe7f4d505353bbf3ff491eb573f4d94",
+    "rol": "Docente",
+    "email": "Canfederon@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "D1890",
+    "nombre": "Armando Lopez",
+    "password_hash": "a85ca3e820d521c5cdad288b186351293d7b90a15513b3e8d8fd51d7d07610ee",
+    "rol": "Docente",
+    "email": "armalop85@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "D1895",
+    "nombre": "Manuel Enrique Ayora Ponce",
+    "password_hash": "73ded76103f19ffa9f6955d464d8e739c8eabc0680fef298a80d8ad58671276a",
+    "rol": "Docente",
+    "email": "manuayo@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "E2525",
+    "nombre": "Adrian Mauricio Acuña Tejeda",
+    "password_hash": "5e3d7820727bcf7ab2b54cdb5dfaf221944d3a9331921db263270d2d76b6ddfe",
+    "rol": "Administración",
+    "email": "acuñatj@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "E3535",
+    "nombre": "Axel Alfonso Hernandez Velazquez",
+    "password_hash": "aaf410fc777a44d572fbf5b07a7a3a0c9eebf6e092d76b23d74b3997a96f2b27",
+    "rol": "Estudiante",
+    "email": "axelalfon@gmail.com",
+    "activo": true
+  },
+  {
+    "id": "E0606",
+    "nombre": "Lucia Olvera Ponce",
+    "password_hash": "6bbe566e06a2993d8ea045d344082070e72630abf0e53fd3348cd511a53892d5",
+    "rol": "Estudiante",
+    "email": "Luciaol@gmail.com",
+    "activo": true
+  }
+]
