@@ -1,3 +1,4 @@
+#Jose Natanael Canche Pech
 import time
 
 def fibonacci_recursivo(n):
@@ -31,4 +32,5 @@ tiempo_ite = fin - inicio
 
 print(f"Resultado para n={n_objetivo}: {res_rec}")
 print(f"Tiempo Recursivo: {tiempo_rec:.6f} segundos")
+
 print(f"Tiempo Iterativo: {tiempo_ite:.6f} segundos")
