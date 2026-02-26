@@ -1,19 +1,3 @@
-"""
-Sistema de Control Escolar - Versión 2.0 Completa
-Mejoras implementadas:
-- Módulo 1: Autenticación con roles (Admin, Docente, Estudiante), mostrar/ocultar contraseña,
-            validación de contraseña segura, registro de usuarios
-- Módulo 2: Catálogo de Alumnos CRUD completo con fotografía, dirección, lugar de nacimiento,
-            último grado, carrera, grupo, estatus. Permisos por rol.
-- Módulo 3: Catálogo de Docentes con tipo de contrato, baja temporal, materias que imparte
-- Módulo 4: Catálogos Unificados (Alumnos, Docentes, Materias, Grupos, Carreras, Aulas)
-- Módulo 5: Gestión de Materias y cambio de grupo
-- Módulo 6: Gestión de Carreras con materias, grupos y docentes asociados
-- Módulo 7: Horarios con validación de cruces, catálogo de aulas
-- Módulo 8: UX mejorada con desplegables, confirmaciones, filtros
-- Módulo 9: Edición integrada en las vistas de listado
-- Módulo 10: Gestión de usuarios unificada, registro mejorado y ventanas emergentes de detalle
-"""
 
 import json
 import os
