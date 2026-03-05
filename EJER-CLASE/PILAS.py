@@ -8,26 +8,25 @@ class PilaVisual:
         self.master.geometry("400x550")
         self.master.configure(bg="#2c3e50")
 
-        # Lógica de la pila
+       
         self.pila = []
-        self.capacidad_maxima = 6  # Límite para mostrar el estado "Llena"
+        self.capacidad_maxima = 6  
 
         self.crear_interfaz()
 
     def crear_interfaz(self):
-        # Título
+        
         lbl_titulo = tk.Label(self.master, text="Estructura de Datos: Pila", 
                               font=("Arial", 16, "bold"), bg="#2c3e50", fg="white")
         lbl_titulo.pack(pady=10)
 
-        # Entrada de datos
+        
         frame_entrada = tk.Frame(self.master, bg="#2c3e50")
         frame_entrada.pack(pady=5)
         
         self.entrada_dato = tk.Entry(frame_entrada, font=("Arial", 14), width=10)
         self.entrada_dato.pack(side=tk.LEFT, padx=5)
 
-        # Botones de Operaciones
         frame_botones = tk.Frame(self.master, bg="#2c3e50")
         frame_botones.pack(pady=10)
 
@@ -43,12 +42,12 @@ class PilaVisual:
                              font=("Arial", 10, "bold"), command=self.peek)
         btn_peek.grid(row=0, column=2, padx=5)
 
-        # Estado de la Pila
+       
         self.lbl_estado = tk.Label(self.master, text="Estado: Vacía", 
                                    font=("Arial", 12), bg="#2c3e50", fg="#f1c40f")
         self.lbl_estado.pack(pady=5)
 
-        # Canvas para dibujar la pila
+        
         self.canvas = tk.Canvas(self.master, width=200, height=320, bg="#ecf0f1", relief=tk.SUNKEN, bd=2)
         self.canvas.pack(pady=10)
         
@@ -97,28 +96,28 @@ class PilaVisual:
     def dibujar_pila(self):
         self.canvas.delete("all")
         
-        # Dimensiones de los bloques
         ancho_canvas = 200
         alto_canvas = 320
         alto_bloque = 50
         margen = 10
         
-        # Dibujar desde la base hacia arriba
+   
         for i, dato in enumerate(self.pila):
-            # Calcular coordenadas (el índice 0 va hasta abajo)
+            )
             y2 = alto_canvas - (i * alto_bloque) - margen
-            y1 = y2 - alto_bloque + 5 # +5 para dejar un pequeño espacio entre bloques
+            y1 = y2 - alto_bloque + 5 
             x1 = margen
             x2 = ancho_canvas - margen
             
-            # Dibujar el rectángulo (el último elemento se pinta de un color distinto para resaltar la cima)
+            
             color_fondo = "#3498db" if i == len(self.pila) - 1 else "#95a5a6"
             self.canvas.create_rectangle(x1, y1, x2, y2, fill=color_fondo, outline="black")
             
-            # Dibujar el texto centrado en el bloque
+            
             self.canvas.create_text(ancho_canvas/2, (y1+y2)/2, text=dato, font=("Arial", 12, "bold"), fill="white")
 
 if __name__ == "__main__":
     root = tk.Tk()
     app = PilaVisual(root)
+
     root.mainloop()
