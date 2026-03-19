@@ -1,14 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-# ============================================================
-#  Estructura de datos: diccionario ordenado alfabéticamente
-#  Clave: nombre del postre (str)
-#  Valor: lista de ingredientes (list)
-#
-#  Se incluyen duplicados intencionales para demostrar
-#  el subprograma de limpieza automática.
-# ============================================================
 
 POSTRES = {
     "Brownie":             ["chocolate", "harina", "huevo", "mantequilla", "azúcar", "harina"],
@@ -23,7 +13,6 @@ POSTRES = {
 }
 
 
-# ─────────────────────────── helpers ────────────────────────────
 
 def _ordenar():
     global POSTRES
@@ -58,7 +47,6 @@ def _listar_postres():
         print(f"    {i:2}. {nombre}")
 
 
-# ─────────────────────────── opciones del menú original ─────────
 
 def ver_ingredientes():
     print("\n══════════════════════════════")
@@ -253,7 +241,6 @@ def dar_baja_postre():
         print("  Operación cancelada.")
 
 
-# ─────────────────────────── SUBPROGRAMA NUEVO ──────────────────
 
 def eliminar_duplicados_postres():
     """
@@ -270,13 +257,6 @@ def eliminar_duplicados_postres():
     print("\n══════════════════════════════════════════════")
     print("  ELIMINANDO DUPLICADOS AUTOMÁTICAMENTE")
     print("══════════════════════════════════════════════")
-
-    # ── Paso 1: postres duplicados ───────────────────────────────
-    # ¿Por qué NO set()?
-    #   set(POSTRES.values())  →  TypeError: unhashable type: 'list'
-    # ¿Por qué sí dict de claves normalizadas?
-    #   Comparamos strings normalizados (hashables) como claves,
-    #   nunca las listas directamente.
 
     postres_vistos = {}   # {nombre_normalizado: nombre_original_a_conservar}
     eliminados_postres = []
@@ -296,9 +276,6 @@ def eliminar_duplicados_postres():
             del POSTRES[p]
     else:
         print("\n  No se encontraron postres duplicados.")
-
-    # ── Paso 2: ingredientes duplicados dentro de cada lista ─────
-    # str es hashable → set() funciona perfectamente aquí.
     print("\n  Ingredientes duplicados eliminados por postre:")
     hubo = False
 
@@ -324,7 +301,6 @@ def eliminar_duplicados_postres():
     if not hubo:
         print("    (Ningún ingrediente duplicado encontrado.)")
 
-    # ── Paso 3: reordenar ────────────────────────────────────────
     _ordenar()
 
     print(f"\n  ✓ Limpieza completa. Postres en catálogo: {len(POSTRES)}")
@@ -368,7 +344,6 @@ def menu():
         input("\n  Presione Enter para continuar...")
 
 
-# ─────────────────────────── entrada ────────────────────────────
 
 if __name__ == "__main__":
     menu()
