@@ -1,19 +1,7 @@
-"""
-╔══════════════════════════════════════════════════════════════════╗
-║           OPERACIONES DE GRAFOS - IMPLEMENTACIÓN VISUAL          ║
-║  Cubre: Operaciones Generales, Aristas Dirigidas y Actualización ║
-╚══════════════════════════════════════════════════════════════════╝
-"""
-
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 import math
 import random
-
-
-# ══════════════════════════════════════════════════════════════════
-#  MODELO DE GRAFO (TDA)
-# ══════════════════════════════════════════════════════════════════
 
 class Arista:
     _contador = 0
@@ -204,10 +192,6 @@ class Grafo:
         return self._aristas.get(e)
 
 
-# ══════════════════════════════════════════════════════════════════
-#  INTERFAZ GRÁFICA
-# ══════════════════════════════════════════════════════════════════
-
 DARK_BG   = "#0d1b2a"
 PANEL_BG  = "#112240"
 ACCENT    = "#f4a261"
@@ -243,20 +227,18 @@ class App(tk.Tk):
         self._init_ejemplo()
         self._redraw()
 
-    # ── CONSTRUCCIÓN DE UI ─────────────────────────────────────────
 
     def _build_ui(self):
-        # ---- barra superior ----
         top = tk.Frame(self, bg=DARK_BG, pady=6)
         top.pack(fill="x")
         tk.Label(top, text="◈ GRAFO TDA — OPERACIONES COMPLETAS ◈",
                  font=FONT_TTL, fg=ACCENT, bg=DARK_BG).pack()
 
-        # ---- zona central ----
+     
         center = tk.Frame(self, bg=DARK_BG)
         center.pack(fill="both", expand=True, padx=10, pady=(0, 6))
 
-        # canvas
+        
         self.canvas = tk.Canvas(center, bg=DARK_BG, bd=0,
                                 highlightthickness=1,
                                 highlightbackground=ACCENT2)
@@ -266,14 +248,14 @@ class App(tk.Tk):
         self.canvas.bind("<ButtonRelease-1>", self._on_release)
         self.canvas.bind("<Button-3>",        self._on_right_click)
 
-        # panel derecho
+        
         right = tk.Frame(center, bg=PANEL_BG, width=370,
                          padx=10, pady=8)
         right.pack(side="right", fill="y")
         right.pack_propagate(False)
         self._build_panel(right)
 
-        # barra de resultado
+
         bot = tk.Frame(self, bg=GRAY, padx=8, pady=4)
         bot.pack(fill="x")
         self.lbl_res = tk.Label(bot, text="▸ Resultado aparecerá aquí",
@@ -485,7 +467,6 @@ class App(tk.Tk):
         self._redraw()
         self._show(f"Grafo aleatorio con {n} vértices generado.", GREEN)
 
-    # ── DIBUJADO ──────────────────────────────────────────────────
 
     R = 24   # radio de nodo
 
@@ -493,14 +474,13 @@ class App(tk.Tk):
         c = self.canvas
         c.delete("all")
 
-        # cuadrícula sutil
         W, H = c.winfo_width() or 900, c.winfo_height() or 680
         for x in range(0, W, 50):
             c.create_line(x, 0, x, H, fill="#1a3050", width=1)
         for y in range(0, H, 50):
             c.create_line(0, y, W, y, fill="#1a3050", width=1)
 
-        # aristas
+    
         for eid, ar in self.grafo._aristas.items():
             if ar.v not in self.pos or ar.w not in self.pos:
                 continue
@@ -516,14 +496,14 @@ class App(tk.Tk):
             else:
                 c.create_line(x1, y1, x2, y2, fill=clr, width=width,
                               tags=f"edge_{eid}")
-                # etiqueta
+                
                 mx, my = (x1+x2)/2, (y1+y2)/2
                 c.create_oval(mx-10, my-10, mx+10, my+10, fill=PANEL_BG,
                               outline=clr, width=1)
                 c.create_text(mx, my, text=f"e{eid}", fill=clr,
                               font=("Courier New", 8))
 
-        # vértices
+
         for vid, (x, y) in self.pos.items():
             is_hl = (vid == highlight_v or vid == self.selected_v)
             fill  = NODE_SEL if is_hl else NODE_CLR
@@ -569,7 +549,6 @@ class App(tk.Tk):
     def _show(self, msg, color=GREEN):
         self.lbl_res.config(text=f"▸ {msg}", fg=color)
 
-    # ── INTERACCIÓN CANVAS ────────────────────────────────────────
 
     def _node_at(self, x, y):
         for vid, (vx, vy) in self.pos.items():
@@ -619,7 +598,6 @@ class App(tk.Tk):
         self._redraw()
         self._show("Selección limpiada.", ACCENT2)
 
-    # ── HELPERS ───────────────────────────────────────────────────
 
     def _req_vertex(self):
         if self.selected_v is None:
@@ -639,8 +617,6 @@ class App(tk.Tk):
 
     def _ask_str(self, prompt="Valor:"):
         return simpledialog.askstring("Entrada", prompt, parent=self)
-
-    # ── OPERACIONES GENERALES ─────────────────────────────────────
 
     def _op_numVertices(self):
         r = self.grafo.numVertices()
@@ -707,7 +683,6 @@ class App(tk.Tk):
         self._show(f"esAdyacente(V{v}, V{w}) = {r}", clr)
         self._redraw(highlight_v=v)
 
-    # ── OPERACIONES DIRIGIDAS ─────────────────────────────────────
 
     def _op_aristasDirigidas(self):
         r = self.grafo.aristasDirigidas()
@@ -787,8 +762,6 @@ class App(tk.Tk):
         self._show(f"esDirigida(e{e}) = {r}", clr)
         self._redraw(highlight_e=e)
 
-    # ── OPERACIONES ACTUALIZACIÓN ─────────────────────────────────
-
     def _op_insertaVertice(self):
         obj = self._ask_str("Objeto/nombre del vértice:")
         if obj is None: return
@@ -867,9 +840,6 @@ class App(tk.Tk):
         self._show(f"asignaDirA(e{e}, V{v}) → {'OK' if ok else 'Error'}", GREEN if ok else RED)
 
 
-# ══════════════════════════════════════════════════════════════════
-#  ENTRY POINT
-# ══════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     app = App()
