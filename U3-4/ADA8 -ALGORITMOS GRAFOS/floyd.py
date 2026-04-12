@@ -1,18 +1,6 @@
 INF = float('inf')
 
 def floyd_warshall(matriz_adyacencia, nodos):
-    """
-    Algoritmo de Floyd-Warshall para encontrar los caminos mas cortos
-    entre TODOS los pares de nodos del grafo.
-
-    Args:
-        matriz_adyacencia: lista 2D con pesos entre nodos (INF si no hay arista)
-        nodos: lista con los nombres de los nodos
-
-    Returns:
-        dist: matriz con las distancias minimas entre todos los pares
-        siguiente: matriz para reconstruir rutas
-    """
     n = len(nodos)
 
     # Copiar la matriz de adyacencia
@@ -37,7 +25,6 @@ def floyd_warshall(matriz_adyacencia, nodos):
 
 
 def reconstruir_camino(siguiente, i, j):
-    """Reconstruye el camino desde el nodo i hasta el nodo j."""
     if siguiente[i][j] is None:
         return []
     camino = [i]
@@ -48,7 +35,6 @@ def reconstruir_camino(siguiente, i, j):
 
 
 def imprimir_matriz(matriz, nodos, titulo):
-    """Imprime una matriz de distancias de forma legible."""
     n = len(nodos)
     print(f"\n{titulo}")
     print("      " + "  ".join(f"{nodos[j]:>5}" for j in range(n)))
