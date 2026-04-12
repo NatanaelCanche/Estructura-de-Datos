@@ -27,22 +27,7 @@ class UnionFind:
 
         return True
 
-
 def kruskal(nodos, aristas):
-    """
-    Algoritmo de Kruskal para encontrar el Arbol de Expansion Minima (MST).
-    Selecciona las aristas de menor peso sin formar ciclos hasta conectar
-    todos los nodos del grafo.
-
-    Args:
-        nodos: lista de nodos del grafo
-        aristas: lista de tuplas (peso, nodo1, nodo2)
-
-    Returns:
-        mst: lista de aristas del arbol de expansion minima
-        costo_total: suma total de pesos del MST
-    """
-    # Ordenar aristas por peso (ascendente)
     aristas_ordenadas = sorted(aristas, key=lambda x: x[0])
 
     uf = UnionFind(nodos)
