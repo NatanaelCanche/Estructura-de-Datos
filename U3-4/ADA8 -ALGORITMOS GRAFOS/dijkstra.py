@@ -1,18 +1,6 @@
 import heapq
 
 def dijkstra(grafo, inicio):
-    """
-    Algoritmo de Dijkstra para encontrar el camino mas corto
-    desde un nodo origen hacia todos los demas nodos del grafo.
-
-    Args:
-        grafo: diccionario de adyacencia {nodo: [(vecino, peso), ...]}
-        inicio: nodo de inicio
-
-    Returns:
-        distancias: diccionario con la distancia minima a cada nodo
-        predecesores: diccionario para reconstruir el camino
-    """
     # Inicializar distancias como infinito para todos los nodos
     distancias = {nodo: float('inf') for nodo in grafo}
     distancias[inicio] = 0
@@ -42,8 +30,7 @@ def dijkstra(grafo, inicio):
 
 
 def reconstruir_camino(predecesores, inicio, fin):
-    """Reconstruye el camino desde inicio hasta fin."""
-    camino = []
+
     nodo = fin
     while nodo is not None:
         camino.append(nodo)
