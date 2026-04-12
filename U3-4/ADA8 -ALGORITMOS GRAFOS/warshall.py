@@ -1,14 +1,4 @@
 def warshall(matriz_adyacencia):
-    """
-    Algoritmo de Warshall para calcular la CLAUSURA TRANSITIVA de un grafo dirigido.
-    Determina si existe alguna ruta (directa o indirecta) entre cada par de nodos.
-
-    Args:
-        matriz_adyacencia: lista 2D de booleanos/enteros (1 si hay arista, 0 si no)
-
-    Returns:
-        alcance: matriz booleana de clausura transitiva
-    """
     n = len(matriz_adyacencia)
 
     # Copiar la matriz de adyacencia como matriz de alcance
