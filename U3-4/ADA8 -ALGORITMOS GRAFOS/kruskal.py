@@ -1,21 +1,15 @@
 class UnionFind:
-    """Estructura Union-Find (Disjoint Set Union) para detectar ciclos."""
 
     def __init__(self, nodos):
         self.padre = {nodo: nodo for nodo in nodos}
         self.rango = {nodo: 0 for nodo in nodos}
 
     def encontrar(self, nodo):
-        """Encuentra la raiz del conjunto (con compresion de camino)."""
         if self.padre[nodo] != nodo:
             self.padre[nodo] = self.encontrar(self.padre[nodo])
         return self.padre[nodo]
 
     def unir(self, nodo1, nodo2):
-        """
-        Une dos conjuntos. Retorna True si se unieron (no forman ciclo),
-        False si ya estaban en el mismo conjunto (forman ciclo).
-        """
         raiz1 = self.encontrar(nodo1)
         raiz2 = self.encontrar(nodo2)
 
